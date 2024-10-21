@@ -1,0 +1,10 @@
+[windows]
+23 server IPs
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=username
+
+[windows:vars]
+ansible_password='password'
+ansible_shell_type=cmd

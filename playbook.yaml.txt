@@ -1,0 +1,16 @@
+---
+- name: Uninstall old Chrome .exe and Install latest Chrome with Chocolatey
+  hosts: all
+  remote_user: username
+  gather_facts: no
+
+  tasks:
+  - name: Uninstall Chrome
+    win_package: 
+      product_id: Google Chrome
+      state: absent
+
+  - name: Install Chrome
+    win_chocolatey:
+      name: googlechrome
+      state: latest
